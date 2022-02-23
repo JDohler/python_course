@@ -1,9 +1,13 @@
-I'm working with a microgrid power management system. I have data from renewable energies, energy prices, 
-renewable prices, and a demand profile as well. So, I was planning to analyze these data in the aspects:
+The Traveling Salesperson Problem
 
-- The renewable energy produced is enough to supply the demand? 
-- Is it worth buying energy from the grid or using renewable? 
+Consider the Traveling Salesperson Problem :
 
+Given a set of cities and the distances between each pair of cities, what is the shortest
+possible tour that visits each city exactly once, and returns to the starting city?
+Create a package that tries to find a good solution for the traveling salesperson problem which
+takes a matrix with the distances between the points and outputs the best solution found. Try it
+out on the 10 largest Swedish cities.
+Make a pip package out of it including dependencies. Add CI using Travis, testing installation
+from pip and running the 10 cities example.
 
-That is my thought. I need to go through more details about the cases I would like to present, but the 
-main idea is this one. Let me know what do you think. 
+References: http://nbviewer.jupyter.org/url/norvig.com/ipython/TSP.ipynb. 

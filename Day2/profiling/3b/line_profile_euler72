@@ -1,0 +1,25 @@
+Timer unit: 1e-07 s
+
+Total time: 9.4e-06 s
+File: C:\Users\jessa166\python_course\Day2\profiling\euler72.py
+Function: gen_primes at line 7
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+     7                                           def gen_primes(n):
+     8         1         28.0     28.0     29.8       l = range(2,n)
+     9         1          9.0      9.0      9.6       primes = []
+    10         1         18.0     18.0     19.1       for j in range(0,len(l)):
+    11         1          5.0      5.0      5.3          p = True
+    12         1          7.0      7.0      7.4          for d in primes:
+    13                                                       if(d > sqrt(l[j])):
+    14                                                           break
+    15                                                       if(l[j] % d == 0):
+    16                                                           p = False
+    17                                                           break;
+    18         1          6.0      6.0      6.4          if(p):
+    19         1         15.0     15.0     16.0              primes.append(l[j])
+    20                                           
+    21         1          6.0      6.0      6.4          return primes
+
+Result: According to the output table, it can be seen that most of the time is spent on executing lines 8 and 10. 

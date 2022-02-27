@@ -1,0 +1,22 @@
+Filename: C:\Users\jessa166\python_course\Day2\profiling\euler72.py
+
+Line #    Mem usage    Increment  Occurences   Line Contents
+============================================================
+     7     93.5 MiB     93.5 MiB           1   def gen_primes(n):
+     8     93.5 MiB      0.0 MiB           1        l = range(2,n)
+     9     93.5 MiB      0.0 MiB           1        primes = []
+    10     93.5 MiB      0.0 MiB           1        for j in range(0,len(l)):
+    11     93.5 MiB      0.0 MiB           1           p = True
+    12     93.5 MiB      0.0 MiB           1           for d in primes:
+    13                                                     if(d > sqrt(l[j])):
+    14                                                         break
+    15                                                     if(l[j] % d == 0):
+    16                                                         p = False
+    17                                                         break;
+    18     93.5 MiB      0.0 MiB           1           if(p):
+    19     93.5 MiB      0.0 MiB           1               primes.append(l[j])
+    20                                         
+    21     93.5 MiB      0.0 MiB           1           return primes
+
+
+Result: The largest memory increments occur on line 7

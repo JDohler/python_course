@@ -1,0 +1,40 @@
+Timer unit: 1e-07 s
+
+Total time: 22.3287 s
+File: C:\Users\jessa166\python_course\Day_2\profiling\matmult.py
+Function: main at line 8
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+     8                                           def main():
+     9         1         16.0     16.0      0.0      N = 250
+    10                                           
+    11                                               # NxN matrix
+    12         1          7.0      7.0      0.0      X = []
+    13       251       1478.0      5.9      0.0      for i in range(N):
+    14       250    1975712.0   7902.8      0.9         X.append([random.randint(0,100) for r in range(N)])
+    15                                           
+    16                                               # Nx(N+1) matrix
+    17         1          5.0      5.0      0.0      Y = []
+    18       251       1390.0      5.5      0.0      for i in range(N):
+    19       250    1953078.0   7812.3      0.9          Y.append([random.randint(0,100) for r in range(N+1)])
+    20                                           
+    21                                               # result is Nx(N+1)
+    22         1          6.0      6.0      0.0      result = []
+    23       251       1112.0      4.4      0.0      for i in range(N):
+    24       250       9024.0     36.1      0.0          result.append([0] * (N+1))
+    25                                           
+    26                                               # iterate through rows of X
+    27       251       1850.0      7.4      0.0      for i in range(len(X)):
+    28                                                   # iterate through columns of Y
+    29     63000     340900.0      5.4      0.2          for j in range(len(Y[0])):
+    30                                                       # iterate through rows of Y
+    31  15750250   80380855.0      5.1     36.0              for k in range(len(Y)):
+    32  15687500  138427925.0      8.8     62.0                  result[i][j] += X[i][k] * Y[k][j]
+    33                                           
+    34       251       2854.0     11.4      0.0      for r in result:
+    35       250     190790.0    763.2      0.1          print(r)
+    36         1          7.0      7.0      0.0      return result
+
+
+Result: According to the output table, it can be seen that most of the time is spent on executing lines 31-32. 

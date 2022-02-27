@@ -1,0 +1,25 @@
+Filename: C:\Users\jessa166\python_course\Day2\profiling\3c\matmult_opt.py
+
+Line #    Mem usage    Increment  Occurences   Line Contents
+============================================================
+    10     64.2 MiB     64.2 MiB           1   def main():
+    11     64.3 MiB      0.0 MiB           1       N = 250
+    12                                         
+    13                                            # NxN matrix
+    14     64.3 MiB      0.0 MiB           1       X = np.random.randint(0,100, size=(N, N))
+    15                                         
+    16                                             # Nx(N+1) matrix
+    17     64.3 MiB      0.0 MiB           1       Y = np.random.randint(0,100, size=(N, N + 1))
+    18                                         
+    19                                             # Nx(N+1)
+    20     64.3 MiB      0.0 MiB           1       result = np.zeros(shape=(N, N+1), dtype="int64")
+    21                                         
+    22                                             # iterate through rows of X
+    23     64.3 MiB      0.0 MiB         251       for i in range(X.shape[0]):
+    24                                                 # iterate through columns of Y
+    25     64.3 MiB      0.0 MiB       63000           for j in range(Y.shape[1]):
+    26     64.3 MiB      0.0 MiB       62750               k = X[i, :]*Y[:, j]
+    27     64.3 MiB      0.0 MiB       62750               result[i, j] = k.sum()
+    28                                                                 
+    29                                                     
+    30     64.3 MiB      0.0 MiB           1       return result
